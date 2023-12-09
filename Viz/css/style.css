@@ -6,17 +6,20 @@ html {
 #tooltip {
   position: absolute;
   display: none;
-  background-color: #9c9c9c;
-  padding: 16px;
-  border-radius: 5px;
-  border: 2px solid black;
+  background-color: #9727ae; /* Change to a different background color */
+  color: #fff; /* Change text color to white */
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #9727ae; /* Change border color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
 }
 
 .popup-element {
   cursor: pointer;
 }
+
 .popup-element:hover {
-  background-color: #8693a0;
+  background-color: #3498db; /* Change hover background color */
 }
 
 #stand-bg {
@@ -24,16 +27,14 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;  /* Adjust as needed */
-  height: 300px; /* Adjust as needed */
+  width: 300px;
+  height: 300px;
   opacity: 0.3;
-  z-index: 10;   /* Adjust if necessary */
+  z-index: 10;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-
-
 
 #select-stand-popup {
   position: fixed;
@@ -48,11 +49,16 @@ html {
 #barchartTooltip {
   position: absolute;
   display: none;
-  background-color: #9c9c9c;
-  padding: 16px;
-  border-radius: 5px;
-  border: 2px solid black;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #9727ae;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+/* Rest of your CSS remains unchanged */
+
 
 #container {
   display: flex;
@@ -111,11 +117,23 @@ html {
 
 #tooltip .pokemon-details {
   margin-top: 10px;
+  background-color: #ffffff; /* Change to a different background color */
+  color: #000000; /* Change text color to white */
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #9727ae; /* Change border color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
 }
 
 #tooltip .stand-details {
   margin-top: 10px;
   display: flex;
+  background-color: #ffffff; /* Change to a different background color */
+  color: #000000; /* Change text color to white */
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #9727ae; /* Change border color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
 }
 .stand-img {
   max-height: 200px;
