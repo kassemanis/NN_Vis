@@ -6,9 +6,10 @@
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
-    <audio controls autoplay loop id="myAudio" >
-      <source src="data/theme.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+
+    <iframe src="data/theme.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <audio autoplay loop controls>
+        <source src="data/theme.mp3" type="audio/mp3">
     </audio>
 
     <style>
@@ -23,7 +24,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>Stand-Visualizer</h1>
+        <h1>Stand-Visualizer By Anis</h1>
         <div id="container">
           <div class="row">
             <div class="col">
