@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <iframe src="data/theme.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-    <audio autoplay loop controls>
+    
+    <audio id="myAudio" loop controls>
         <source src="data/theme.mp3" type="audio/mp3">
     </audio>
 
@@ -26,88 +27,102 @@
     <div class="wrapper">
         <h1>Stand-Visualizer By Anis</h1>
         <div id="container">
-          <div class="row">
-            <div class="col">
-            <!-- Scatterplot in Bootstrap Card -->
-              <div class="card mb-3">
-                  <div class="card-header">
-                      Scatterplot
-                  </div>
-                  <div class="card-body">
-                      <svg class="jojoChart" id="scatterplot"></svg>
-                  </div>
-              </div>
-            </div>
-
-            <div class="col">
-            <!-- Radar Chart in Bootstrap Card -->
-              <div class="card mb-3">
-                  <div class="card-header">
-                      Radar Chart
-                  </div>
-                  <div class="card-body">
-                      <div id="stand-chart">No Selected Stand</div>
-                      <div id="radarChart">
-                          <div id="stand-bg"></div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <!-- Piechart in Bootstrap Card -->
-              <div class="card mb-3">
-                  <div class="card-header">
-                      Piechart
-                  </div>
-                  <div class="card-body" style="overflow-x: auto;">
-                      <svg class="jojoChart" id="barchart"></svg>
-                  </div>
-                  <!-- Legend for the Pie Chart -->
-                  <div class="card-footer">
-                    <div id="pie-legend">
-                        <div id="legend">
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #FDB813;"></div>
-                                <div class="legend-label">Part 3: Stardust Crusaders</div>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #0080C9;"></div>
-                                <div class="legend-label">Part 4: Diamond is Unbreakable</div>
-                            </div>
-                            <!-- Add more legend items for other parts as needed -->
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #FF6F61;"></div>
-                                <div class="legend-label">Part 5: Vento Aureo</div>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #87CEEB;"></div>
-                                <div class="legend-label">Part 6: Stone Ocean</div>
-                            </div>
-                            <!-- Add more legend items for other parts as needed -->
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #4CAF50;"></div>
-                                <div class="legend-label">Part 7: Steel Ball Run</div>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #DA70AF;"></div>
-                                <div class="legend-label">Part 8: JoJolion</div>
-                            </div>
-                            <!-- Add more legend items for other parts as needed -->
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #800080;"></div>
-                                <div class="legend-label">Light Novel: Purple Haze Feedback</div>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-color" style="background-color: #FFD700;"></div>
-                                <div class="legend-label">Featured</div>
-                            </div>
-                            <!-- Add more legend items for other parts as needed -->
+            <div class="row">
+                <div class="col">
+                    <!-- Scatterplot in Bootstrap Card -->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            Scatterplot
+                        </div>
+                        <div class="card-body">
+                            <svg class="jojoChart" id="scatterplot"></svg>
                         </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="col">
+                <!-- Radar Chart in Bootstrap Card -->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            Radar Chart
+                        </div>
+                        <div class="card-body">
+                            <div id="stand-chart">No Selected Stand</div>
+                            <div id="radarChart">
+                                <div id="stand-bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <!-- Piechart in Bootstrap Card -->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            Piechart
+                        </div>
+                        <div class="card-body" style="overflow-x: auto;">
+                            <svg class="jojoChart" id="barchart"></svg>
+                        </div>
+                        <!-- Legend for the Pie Chart -->
+                        <div class="card-footer">
+                            <div id="pie-legend">
+                                <div id="legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #FDB813;"></div>
+                                        <div class="legend-label">Part 3: Stardust Crusaders</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #0080C9;"></div>
+                                        <div class="legend-label">Part 4: Diamond is Unbreakable</div>
+                                    </div>
+                                    <!-- Add more legend items for other parts as needed -->
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #FF6F61;"></div>
+                                        <div class="legend-label">Part 5: Vento Aureo</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #87CEEB;"></div>
+                                        <div class="legend-label">Part 6: Stone Ocean</div>
+                                    </div>
+                                    <!-- Add more legend items for other parts as needed -->
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #4CAF50;"></div>
+                                        <div class="legend-label">Part 7: Steel Ball Run</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #DA70AF;"></div>
+                                        <div class="legend-label">Part 8: JoJolion</div>
+                                    </div>
+                                    <!-- Add more legend items for other parts as needed -->
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #800080;"></div>
+                                        <div class="legend-label">Light Novel: Purple Haze Feedback</div>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: #FFD700;"></div>
+                                        <div class="legend-label">Featured</div>
+                                    </div>
+                                    <!-- Add more legend items for other parts as needed -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                    <!-- New Row for Tree Map Card -->
+        <div class="row">
+            <div class="col">
+                <!-- Tree Map in Bootstrap Card -->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        Tree Map
+                    </div>
+                    <div class="card-body">
+                        <div id="tree-map"></div>
+                    </div>
                 </div>
             </div>
+        </div>
 
             <!-- Tooltips -->
             <div id="tooltip"></div>
@@ -122,5 +137,6 @@
     <script src="js/main_jojo.js"></script>
     <script src="js/scatterplotJoJo.js"></script>
     <script src="js/piechartJojo.js"></script>
+    <script src="js/treeMap.js"></script>
 </body>
 </html>

@@ -220,3 +220,11 @@ html {
   margin-right: 10px;
   /* Add other necessary styling, e.g., border */
 }
+
+#tree-map {
+  width: 100%; /* Set the desired width */
+  height: auto; /* Allow the height to adjust automatically */
+  font-family: Arial, sans-serif; /* Choose an appropriate font */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  /* Add any additional styling you want, such as background color or borders */
+}
