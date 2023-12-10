@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <iframe src="data/theme.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-    
     <audio id="myAudio" loop controls>
         <source src="data/theme.mp3" type="audio/mp3">
     </audio>
@@ -109,20 +108,18 @@
                         </div>
                     </div>
             </div>
-<!--
         <div class="row">
             <div class="col">
                 <div class="card mb-3">
                     <div class="card-header">
-                        Tree Map
+                        Stand 3D rendering
                     </div>
-                    <div class="card-body">
-                        <div id="tree-map"></div>
+                    <div class="card-body" style="width: 700px; height: 350px;">
+                        <div id="3dmodel"></div>
                     </div>
                 </div>
             </div>
         </div>
--->
             <!-- Tooltips -->
             <div id="tooltip"></div>
             <div id="barchartTooltip"></div>
@@ -133,9 +130,18 @@
 
     <!-- Scripts -->
     <script src="js/d3.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+    <script src="data/3D/assets/OrbitControls.js"></script>
+    <script src="data/3D/assets/OBJLoader.js"></script>
+    <script src="data/3D/assets/MTLLoader.js"></script>
+
     <script src="js/main_jojo.js"></script>
     <script src="js/scatterplotJoJo.js"></script>
     <script src="js/piechartJojo.js"></script>
-    <script src="js/treeMap.js"></script>
+    <script src="js/3D.js"></script>
+
+
+
 </body>
 </html>
