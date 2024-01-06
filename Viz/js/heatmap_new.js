@@ -62,6 +62,14 @@ d3.csv("data/jojo.csv").then(function (rawData) {
 
     // Extract column names (attributes) from the data
     const attributes = Object.keys(data[0]).filter(d => d !== "story" && d !== "image");
+    const storyParts = [
+        "Part 3",
+        "Part 4",
+        "Part 5",
+        "Part 6",
+        "Part 7",
+        "Part 8"
+      ];
 
     // Create heatmap cells
     const cells = svgHeatmap.selectAll(".cell-group")
@@ -146,11 +154,11 @@ d3.csv("data/jojo.csv").then(function (rawData) {
         .text(d => d.story);
 
     const xLabelsBarChart = svgStackedBarChart.selectAll(".x-labels")
-        .data(attributes)
+        .data(storyParts)
         .enter()
         .append("text")
         .attr("class", "x-labels")
-        .attr("x", (d, i) => i * (width / attributes.length) + (width / attributes.length) / 2)
+        .attr("x", (d, i) => i * (width / storyParts.length) + (width / storyParts.length) / 2)
         .attr("y", height + 20)
         .attr("text-anchor", "middle")
         .text(d => d);
