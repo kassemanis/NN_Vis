@@ -184,27 +184,6 @@ d3.csv("data/jojo.csv").then(function (rawData) {
         .style("text-anchor", "start")
         .text(d => d.toFixed(2));
 
-
-    // Add legend for bar chart
-    const legendBarChart = svgStackedBarChart.selectAll(".legend")
-        .data(colorScale.domain())
-        .enter()
-        .append("g")
-        .attr("class", "legend")
-        .attr("transform", (d, i) => `translate(${i * 20},${-margin.top})`);
-
-    legendBarChart.append("rect")
-        .attr("width", 18)
-        .attr("height", 18)
-        .style("fill", d => colorScale(d));
-
-    legendBarChart.append("text")
-        .attr("x", 25)
-        .attr("y", 9)
-        .attr("dy", ".35em")
-        .style("text-anchor", "start")
-        .text(d => d);
-
 }).catch(function (error) {
     console.log("Error loading the data:", error);
 });
