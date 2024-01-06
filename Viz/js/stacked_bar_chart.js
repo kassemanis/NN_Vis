@@ -17,6 +17,7 @@ const svgStackedBarChart = d3.select(sbarCardElement)
     .attr("transform", `translate(${marginStackedBarChart.left},${marginStackedBarChart.top})`);
 
 // Define the color scale as a sequential color scale
+const colorScale = d3.scaleSequential(d3.interpolateBlues).domain([1, 5]);
 
 // Function to convert CSV to desired data format
 function convertCSVToData(csv) {

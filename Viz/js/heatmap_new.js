@@ -25,8 +25,13 @@ const svgStackedBarChart = d3.select(stackedBarChartCardElement)
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-// Define the color scale as a categorical color scale
+// Define the color scale for the stacked bar chart
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10.slice(0, 5));
+
+// Define the color scale for the heatmap
+const colorScaleHeatmap = d3.scaleSequential(d3.interpolateBlues).domain([1, 5]);
+
+// Function to convert CSV to desired data format
 
 // Function to convert CSV to the desired data format
 function convertCSVToData(csv) {
@@ -74,9 +79,8 @@ d3.csv("data/jojo.csv").then(function (rawData) {
         .attr("x", (d, i) => i * (width / attributes.length))
         .attr("width", width / attributes.length)
         .attr("height", height / data.length)
-        .style("fill", d => colorScale(d.value))
+        .style("fill", d => colorScaleHeatmap(d.value))
         .on("mouseover", function (event, d) {
-            // Show image on mouseover
             d3.select(this).attr("stroke", "black").attr("stroke-width", 2);
             svgHeatmap.append("svg:image")
                 .attr("xlink:href", d.image)
@@ -86,7 +90,6 @@ d3.csv("data/jojo.csv").then(function (rawData) {
                 .attr("height", 50);
         })
         .on("mouseout", function () {
-            // Remove image on mouseout
             d3.select(this).attr("stroke", "none");
             svgHeatmap.selectAll("svg:image").remove();
         });
@@ -127,7 +130,7 @@ d3.csv("data/jojo.csv").then(function (rawData) {
         .attr("class", "bar-segment")
         .attr("x", (d, i) => i * (width / attributes.length))
         .attr("width", width / attributes.length)
-        .attr("y", d => height - d.value * (height / 5)) // Adjusted for the mapping 1 to 5
+        .attr("y", d => height - d.value * (height / 5))
         .attr("height", d => d.value * (height / 5))
         .style("fill", (d, i) => colorScale(i + 1));
 
@@ -153,24 +156,26 @@ d3.csv("data/jojo.csv").then(function (rawData) {
         .text(d => d);
 
     // Add legend for heatmap
+    // Add legend for heatmap
     const legend_hmap = svgHeatmap.selectAll(".legend_hmap")
-        .data(colorScale.domain())
+        .data(colorScaleHeatmap.ticks(5))
         .enter()
         .append("g")
         .attr("class", "legend_hmap")
-        .attr("transform", (d, i) => `translate(${i * 20},${-margin.top})`);
+        .attr("transform", (d, i) => `translate(${i * 80},${-margin.top})`); // Adjust the spacing here
 
     legend_hmap.append("rect")
         .attr("width", 18)
         .attr("height", 18)
-        .style("fill", d => colorScale(d));
+        .style("fill", d => colorScaleHeatmap(d));
 
     legend_hmap.append("text")
         .attr("x", 25)
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("text-anchor", "start")
-        .text(d => d);
+        .text(d => d.toFixed(2));
+
 
     // Add legend for bar chart
     const legendBarChart = svgStackedBarChart.selectAll(".legend")
