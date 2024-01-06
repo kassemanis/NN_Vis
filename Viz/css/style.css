@@ -246,3 +246,37 @@ html {
   overflow: hidden; /* Ensure content doesn't overflow */
   /* Add any additional styling you want, such as background color or borders */
 }
+
+
+
+/* Add styling for the heatmap visualization */
+
+#heatmap_viz {
+  /* Set a background color or add other styling for the container */
+
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+svg {
+  /* Style the SVG element within the container */
+  display: block;
+  margin: 0 auto;
+}
+
+text {
+  /* Style the labels */
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  fill: #333;
+}
+
+.legend_hmap {
+  /* Style the legend items */
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  fill: #333;
+  cursor: pointer;
+}
+
+/* Add any additional styling based on your design preferences */
